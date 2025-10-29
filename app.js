@@ -26,7 +26,17 @@ async function injectPartials() {
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     if (menuBtn && mobileMenu) {
-      menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      const iconPathClosed = 'M4 6h16M4 12h16M4 18h16';
+      const iconPathOpen = 'M6 6l12 12M6 18L18 6';
+      const svgPath = menuBtn.querySelector('svg path');
+
+      menuBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+        if (svgPath) {
+          svgPath.setAttribute('d', isHidden ? iconPathClosed : iconPathOpen);
+        }
+      });
     }
   
     // Update the year in the footer (if the element exists)

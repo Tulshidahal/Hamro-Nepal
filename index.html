@@ -1,47 +1,481 @@
-<!DOCTYPE html><html lang="en"><head>
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Hamro Vacation — Nepal Travel & Transport</title>
+  <meta name="description" content="Hamro Vacation crafts private Nepal journeys with curated itineraries, bilingual guides, and premium transport."/>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{brand:{50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a'}}}}}</script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a'
+            }
+          }
+        }
+      }
+    };
+  </script>
   <link rel="stylesheet" href="styles.css"/>
-  </head>
-  <body class="antialiased text-slate-800">
-    <!-- Top bar -->
-    <div class="bg-brand-700 text-white text-sm">
-      <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
-        <p>XXXXXXX • ✉️ hamrovacation@gmail.com | hamrovacation.com</p>
-        <a href="contact.html#booking" class="underline hover:no-underline">Book a free consult</a>
+</head>
+<body class="bg-slate-50 antialiased text-slate-800">
+  <!-- Top contact strip -->
+  <div class="bg-slate-900 text-xs text-slate-200 sm:text-sm">
+    <div class="max-w-7xl mx-auto flex flex-col gap-2 px-4 py-2 sm:flex-row sm:items-center sm:justify-between">
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-300">
+        <span class="inline-flex items-center gap-2 whitespace-nowrap text-slate-100">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 18l7.5-12 3.5 6 2-3.5L21 18H3z"/>
+          </svg>
+           Est. 2025
+        </span>
+        <span class="inline-flex items-center gap-2 whitespace-nowrap">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7h16l-1.4 9.8a2 2 0 0 1-2 1.7H7.4a2 2 0 0 1-2-1.7L4 7zm3 4h10m-9 4h8"/>
+          </svg>
+          Door-to-door private transport
+        </span>
+      </div>
+      <div class="flex flex-wrap items-center gap-3">
+        <a href="mailto:hamrovacation@gmail.com" class="inline-flex items-center gap-2 text-slate-100 transition hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16a2 2 0 0 1 2 2v.2l-10 6.3L2 8.2V8a2 2 0 0 1 2-2zm0 12h16"/>
+          </svg>
+          hamrovacation@gmail.com
+        </a>
+        <a href="tel:+18023106841" class="inline-flex items-center gap-2 text-slate-100 transition hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 5.25 6 3l3 3-2.25 2.25a13.5 13.5 0 0 0 6 6L14.25 12 17.25 15l-2.25 3a2.25 2.25 0 0 1-3 0A21.75 21.75 0 0 1 3 7.5a2.25 2.25 0 0 1-.75-2.25z"/>
+          </svg>
+          +1 (802) 310-6841
+        </a>
+        <a href="contact.html#booking" class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-4 py-1.5 font-semibold text-white transition hover:bg-brand-400">
+          Book a consult
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7l5 5m0 0-5 5m5-5H6"/>
+          </svg>
+        </a>
       </div>
     </div>
-  
-    <div id="header-mount"></div>
-  
+  </div>
+
+  <div id="header-mount"></div>
+
+  <main>
     <!-- Hero -->
-    <section class="relative">
-      <img src= "photos/nepal_home.jpg" alt="Himalayan mountain view" class="w-full h-[60vh] object-cover"/>
-      <div class="absolute inset-0 bg-slate-900/40"></div>
-      <div class="absolute inset-0 flex items-center">
-        <div class="max-w-7xl mx-auto px-4">
-          <div class="max-w-2xl text-white">
-            <h1 class="text-3xl sm:text-5xl font-bold leading-tight">See Nepal, Comfortably.</h1>
-            <p class="mt-4 text-slate-100">Curated 20–30 day itineraries or fully custom routes.</p>
-            <div class="mt-6 flex flex-wrap gap-3">
-              <a href="packages.html" class="px-5 py-3 rounded-full bg-brand-600 hover:bg-brand-700 text-white">Browse Packages</a>
-              <a href="contact.html#booking" class="px-5 py-3 rounded-full bg-white/90 text-slate-900 hover:bg-white">Plan My Trip</a>
+    <section class="relative isolate overflow-hidden bg-slate-950 text-white">
+      <img src="photos/nepal_home.jpg" alt="Himalayan mountain view" class="absolute inset-0 -z-20 h-full w-full object-cover"/>
+      <div class="absolute inset-0 -z-10 bg-slate-950/70"></div>
+      <div class="absolute inset-y-0 right-0 -z-10 hidden w-1/2 bg-gradient-to-l from-slate-950 via-slate-900/40 to-transparent lg:block"></div>
+      <div class="max-w-7xl mx-auto grid gap-12 px-4 py-20 sm:py-28 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center">
+        <div>
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-brand-100">
+            Nepal • Private Journeys
+          </span>
+          <h1 class="mt-6 text-3xl font-bold leading-tight text-white sm:text-5xl sm:leading-tight">
+            See Nepal, comfortably &mdash; from the peaks to the jungles.
+          </h1>
+          <p class="mt-5 max-w-2xl text-base text-slate-100 sm:text-lg">
+            We design 20–30 day itineraries that blend iconic highlights with hidden villages,
+            premium hotels, bilingual guides, and door-to-door transport. Every journey is paced for comfort, cuisine, and culture.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="contact.html#booking" class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-900/30 transition hover:bg-brand-400">
+              Design my itinerary
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14m-6-6 6 6-6 6"/>
+              </svg>
+            </a>
+            <a href="packages.html" class="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10">
+              Browse sample routes
+            </a>
+         </div>
+          <!--
+          <dl class="mt-12 grid gap-8 text-sm sm:grid-cols-3 sm:text-base">
+            <div>
+              <dt class="text-slate-200">Journeys curated</dt>
+              <dd class="mt-2 text-3xl font-semibold text-white">300+</dd>
+            </div>
+            <div>
+              <dt class="text-slate-200">Expert local guides</dt>
+              <dd class="mt-2 text-3xl font-semibold text-white">45+</dd>
+            </div>
+            <div>
+              <dt class="text-slate-200">Private transfers</dt>
+              <dd class="mt-2 text-3xl font-semibold text-white">100%</dd>
+            </div>
+          </dl>
+          -->
+        </div>
+        <div class="relative">
+          <div class="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur lg:p-8">
+            <div class="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.32em] text-brand-100">
+              <span class="block h-1 w-6 rounded-full bg-brand-300"></span>
+              Signature Stay
+            </div>
+            <h2 class="mt-5 text-2xl font-semibold text-white">Luxury Himalaya Escape</h2>
+            <p class="mt-3 text-sm text-slate-100">
+              24 days across Kathmandu, the Annapurna foothills, Chitwan National Park, and Pokhara &mdash; with seamless transfers and hosted dining.
+            </p>
+            <ul class="mt-6 space-y-4 text-sm text-slate-100">
+              <li class="flex items-start gap-3">
+                <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-500/20 text-brand-100">1</span>
+                Airport VIP meet &amp; greet with bilingual host
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-500/20 text-brand-100">2</span>
+                Boutique lodges with spa access &amp; panoramic terraces
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-500/20 text-brand-100">3</span>
+                Private vehicles, curated excursions, and on-trip concierge
+              </li>
+            </ul>
+            <a href="packages.html#luxury-20" class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-white/90 px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-white">
+              View full itinerary
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14m-6-6 6 6-6 6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick links -->
+    <section class="-mt-12 pb-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid gap-4 md:grid-cols-3">
+          <a href="packages.html" class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <div class="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+              Curated stays
+            </div>
+            <h3 class="mt-4 text-lg font-semibold text-slate-900">Premium &amp; luxury packages</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Compare 20 and 24 day itineraries crafted for comfort and unforgettable views.
+            </p>
+            <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-600">
+              Explore packages
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14m-6-6 6 6-6 6"/>
+              </svg>
+            </span>
+          </a>
+          <a href="estimator.html" class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+              Plan with clarity
+            </div>
+            <h3 class="mt-4 text-lg font-semibold text-slate-900">Instant cost estimator</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Tweak package tiers, activities, and airfare to preview a transparent budget.
+            </p>
+            <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-emerald-600">
+              Estimate my trip
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14m-6-6 6 6-6 6"/>
+              </svg>
+            </span>
+          </a>
+          <a href="gallery.html" class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <div class="inline-flex items-center gap-2 rounded-full bg-rose-50 px-3 py-1 text-xs font-semibold text-rose-700">
+              Inspiration
+            </div>
+            <h3 class="mt-4 text-lg font-semibold text-slate-900">Destinations gallery</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Peek at mountain lodges, jungle safaris, helicopter flights, and cultural festivals.
+            </p>
+            <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-rose-600">
+              View the gallery
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14m-6-6 6 6-6 6"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why choose us -->
+    <section class="pb-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl font-semibold text-slate-900 sm:text-4xl">Why travelers choose Hamro Vacation</h2>
+          <p class="mt-4 text-base text-slate-600">
+            Our Nepal-born team handles every detail, so you can savor high elevation views, festival nights, and lakeside sunsets without the logistics burden.
+          </p>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-50 text-brand-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3l8 4-8 4-8-4 8-4zm0 8l8 4-8 4-8-4 8-4zm0 8l8 4-8 4-8-4 8-4z"/>
+              </svg>
+            </span>
+            <h3 class="mt-4 text-lg font-semibold text-slate-900">Curated immersion</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              We mix iconic highlights with village visits, mindful pacing, and culinary stops you’d never find alone.
+            </p>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.5 3A1.5 1.5 0 0 0 3 4.5v6A1.5 1.5 0 0 0 4.5 12H10v-1.5H4.5v-6H10V3H4.5zm9 6A1.5 1.5 0 0 0 12 10.5v9A1.5 1.5 0 0 0 13.5 21h6a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 19.5 9h-6zm1.5 1.5h3v6h-3v-6z"/>
+              </svg>
+            </span>
+            <h3 class="mt-4 text-lg font-semibold text-slate-900">Private transport</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Late-model SUVs, helicopters, and flights are orchestrated for every segment &mdash; including remote transfers.
+            </p>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-amber-50 text-amber-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3l2.5 6.5L21 10l-4.5 4 1 6-5.5-3.2L7 20l1-6L3 10l6.5-.5L12 3z"/>
+              </svg>
+            </span>
+            <h3 class="mt-4 text-lg font-semibold text-slate-900">Bilingual hosts</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              From Kathmandu to the Annapurna foothills, bilingual guides and on-trip concierges smooth every cultural exchange.
+            </p>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-rose-50 text-rose-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 0 1 6.364 0L12 7.636l1.318-1.318a4.5 4.5 0 0 1 6.364 6.364L12 21l-7.682-7.682a4.5 4.5 0 0 1 0-6.364z"/>
+              </svg>
+            </span>
+            <h3 class="mt-4 text-lg font-semibold text-slate-900">Slow travel pacing</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Balanced rest days, wellness-focused hotels, and curated dining keep you energized for every experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiences spotlight -->
+    <section class="pb-20">
+      <div class="max-w-7xl mx-auto grid gap-12 px-4 lg:grid-cols-2 lg:items-center">
+        <div class="space-y-6">
+          <span class="inline-flex items-center gap-2 rounded-full bg-slate-200 px-4 py-1 text-xs font-semibold uppercase tracking-[0.32em] text-slate-600">
+            Signature experiences
+          </span>
+          <h2 class="text-3xl font-semibold text-slate-900 sm:text-4xl">Panoramic peaks, jungle safaris, and heritage stays</h2>
+          <p class="text-base text-slate-600">
+            Every itinerary is handcrafted. Mix heli-flights over Mount Everest, private Tharu village dinners, sunrise yoga, and boutique wellness retreats overlooking Pokhara’s lakes.
+          </p>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 class="text-lg font-semibold text-slate-900">Everest panorama flight</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Lift off at dawn for close-up views of Everest, Lhotse, and Ama Dablam with cockpit access and champagne landing.
+              </p>
+            </div>
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 class="text-lg font-semibold text-slate-900">Chitwan after dark</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Evening safari with naturalists, followed by a candlelit riverside dinner and cultural performance.
+              </p>
+            </div>
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 class="text-lg font-semibold text-slate-900">Heritage boutique hotels</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Stay in restored Rana palaces and Himalayan lodges featuring Ayurvedic spas and farm-to-table menus.
+              </p>
+            </div>
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 class="text-lg font-semibold text-slate-900">Mindful pacing</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Balanced travel days with optional hikes, yoga, and wellness sessions ensure comfort at altitude.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="relative overflow-hidden rounded-3xl shadow-2xl ring-1 ring-slate-200/60">
+            <img src="photos/nepal_home.jpg" alt="Guests overlooking the Himalayas" class="aspect-[4/5] w-full object-cover"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/0 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white sm:p-8">
+              <p class="text-sm uppercase tracking-[0.4em] text-slate-200">Hosted moments</p>
+              <p class="mt-3 text-lg font-semibold">
+                “Every sunrise was curated &mdash; from prayer-flag blessings in Bhaktapur to rooftop breakfasts over Fewa Lake.”
+              </p>
+              <p class="mt-2 text-sm text-slate-200">— Maya &amp; Richard, 25-day wellness itinerary</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  
-    <!-- Teasers -->
-    <section class="max-w-7xl mx-auto px-4 py-14 grid md:grid-cols-3 gap-6">
-      <a href="packages.html" class="rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow">Premium & Luxury Packages</a>
-      <a href="estimator.html" class="rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow">Instant Cost Estimator</a>
-      <a href="gallery.html" class="rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow">Destinations Gallery</a>
+
+    <!-- Sample itinerary -->
+    <section class="bg-white/70 py-20">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="max-w-3xl">
+          <h2 class="text-3xl font-semibold text-slate-900 sm:text-4xl">A 20-day premium journey at a glance</h2>
+          <p class="mt-4 text-base text-slate-600">
+            Here’s how we pace an immersive trip. Every day can be tailored &mdash; from mountain treks to helicopter add-ons and private workshops.
+          </p>
+        </div>
+        <ol class="relative mt-12 space-y-8 border-l border-slate-200 pl-6">
+          <li class="relative">
+            <span class="absolute -left-[13px] mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-brand-500 bg-white text-xs font-semibold text-brand-600">01</span>
+            <h3 class="text-lg font-semibold text-slate-900">Days 1&ndash;3 &bull; Kathmandu welcome</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              VIP airport arrival, boutique heritage hotel, Old City walking tour, and welcome dinner on a rooftop overlooking Durbar Square.
+            </p>
+          </li>
+          <li class="relative">
+            <span class="absolute -left-[13px] mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-brand-500 bg-white text-xs font-semibold text-brand-600">02</span>
+            <h3 class="text-lg font-semibold text-slate-900">Days 4&ndash;8 &bull; Himalayan foothills</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Scenic drive to Dhulikhel and Bandipur, guided village hikes, temple blessings, and sunrise yoga with panoramic peaks.
+            </p>
+          </li>
+          <li class="relative">
+            <span class="absolute -left-[13px] mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-brand-500 bg-white text-xs font-semibold text-brand-600">03</span>
+            <h3 class="text-lg font-semibold text-slate-900">Days 9&ndash;12 &bull; Pokhara lake life</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Private boat cruise, wellness spa treatments, helicopter add-on to Annapurna Base Camp, and sunset dinner on Sarangkot ridge.
+            </p>
+          </li>
+          <li class="relative">
+            <span class="absolute -left-[13px] mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-brand-500 bg-white text-xs font-semibold text-brand-600">04</span>
+            <h3 class="text-lg font-semibold text-slate-900">Days 13&ndash;16 &bull; Chitwan safari</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Luxe riverfront lodge, private jeep safaris, rhino tracking with naturalists, and Tharu cooking class by lantern light.
+            </p>
+          </li>
+          <li class="relative">
+            <span class="absolute -left-[13px] mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-brand-500 bg-white text-xs font-semibold text-brand-600">05</span>
+            <h3 class="text-lg font-semibold text-slate-900">Days 17&ndash;20 &bull; Heritage finale</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Return to Kathmandu for artisan workshops, spa day, and farewell tasting menu with live classical music.
+            </p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-wrap items-center gap-4 rounded-3xl border border-brand-100 bg-brand-50/60 px-6 py-5 text-sm text-brand-800">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.25 5.25h13.5v13.5H5.25zM9 9h6v6H9z"/>
+          </svg>
+          <span>
+            Want to personalize the flow? Use the estimator to adjust hotels, activities, and airfare, then schedule a consultation to lock in your dates.
+          </span>
+          <a href="estimator.html" class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white transition hover:bg-brand-400">
+            Plan with the estimator
+          </a>
+        </div>
+      </div>
     </section>
-  
-    <div id="footer-mount"></div>
-    <script src="app.js"></script>
-  </body></html>
-  
+
+    <!-- Testimonials -->
+    <section class="relative overflow-hidden py-20">
+      <div class="absolute inset-0 -z-10 bg-gradient-to-br from-brand-700 via-brand-600 to-slate-900"></div>
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.18),_transparent_60%)]"></div>
+      <div class="max-w-7xl mx-auto px-4 text-white">
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <div class="max-w-2xl">
+            <h2 class="text-3xl font-semibold sm:text-4xl">Guests love our curated details</h2>
+            <p class="mt-4 text-base text-brand-50">
+              Hundreds of travelers trust us for once-in-a-lifetime journeys &mdash; with thoughtful pacing, expert guides, and concierge-level support.
+            </p>
+          </div>
+          <a href="contact.html#booking" class="inline-flex items-center gap-2 rounded-full border border-white/30 px-5 py-2 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10">
+            Let's design yours
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14m-6-6 6 6-6 6"/>
+            </svg>
+          </a>
+        </div>
+        <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <article class="flex h-full flex-col rounded-3xl bg-white/10 p-6 shadow-lg shadow-brand-900/40 backdrop-blur">
+            <div class="text-sm uppercase tracking-[0.28em] text-brand-100">Family Journey</div>
+            <p class="mt-4 text-lg font-semibold">
+              “Hamro handled every transfer, guide, and reservation. Our boys loved the Everest flight and we never felt rushed.”
+            </p>
+            <p class="mt-6 text-sm text-brand-100">— The Jensen family, Vermont</p>
+          </article>
+          <article class="flex h-full flex-col rounded-3xl bg-white/10 p-6 shadow-lg shadow-brand-900/40 backdrop-blur">
+            <div class="text-sm uppercase tracking-[0.28em] text-brand-100">Wellness Escape</div>
+            <p class="mt-4 text-lg font-semibold">
+              “Private yoga, Ayurvedic meals, and spa days were woven between cultural outings. The pacing was perfect for altitude.”
+            </p>
+            <p class="mt-6 text-sm text-brand-100">— Priya &amp; Jordan, California</p>
+          </article>
+          <article class="flex h-full flex-col rounded-3xl bg-white/10 p-6 shadow-lg shadow-brand-900/40 backdrop-blur">
+            <div class="text-sm uppercase tracking-[0.28em] text-brand-100">Luxury Anniversary</div>
+            <p class="mt-4 text-lg font-semibold">
+              “From helicopter champagne to calligraphed itineraries, every surprise was thoughtful. We can't wait to return.”
+            </p>
+            <p class="mt-6 text-sm text-brand-100">— Camille &amp; Aaron, Toronto</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="pb-24">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="overflow-hidden rounded-3xl bg-slate-900 text-white shadow-2xl">
+          <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
+            <div class="px-6 py-12 sm:px-12">
+              <span class="inline-flex items-center gap-2 rounded-full bg-brand-500/20 px-4 py-1 text-xs font-semibold uppercase tracking-[0.32em] text-brand-100">
+                Ready when you are
+              </span>
+              <h2 class="mt-6 text-3xl font-semibold sm:text-4xl">Let's craft your custom Nepal journey</h2>
+              <p class="mt-4 text-base text-slate-200">
+                Share your dates, travel style, and wish list. We’ll build a day-by-day plan, secure premier hotels, and coordinate every flight and vehicle.
+              </p>
+              <div class="mt-8 flex flex-wrap gap-4">
+                <a href="contact.html#booking" class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-brand-50">
+                  Book a free consultation
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14m-6-6 6 6-6 6"/>
+                  </svg>
+                </a>
+                <a href="packages.html" class="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10">
+                  View sample trip plans
+                </a>
+                <a href="tel:+18023106841" class="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10">
+                  Call +1 (802) 310-6841
+                </a>
+              </div>
+            </div>
+            <div class="space-y-5 bg-brand-600/10 px-6 py-10 sm:px-12">
+              <h3 class="text-lg font-semibold text-white">What happens next</h3>
+              <ul class="space-y-4 text-sm text-brand-50">
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/20 text-xs font-semibold text-white">1</span>
+                  Schedule a 25-minute planning call or fill out the trip form.
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/20 text-xs font-semibold text-white">2</span>
+                  Receive a custom route with hotels, activities, and pricing options.
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/20 text-xs font-semibold text-white">3</span>
+                  Confirm and relax &mdash; we handle bookings, guides, and on-trip support.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-mount"></div>
+  <script src="app.js"></script>
+</body>
+</html>

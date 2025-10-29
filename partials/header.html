@@ -1,65 +1,108 @@
-<!-- Header / Nav (centered brand) -->
-<header id="siteHeader" class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4">
-      <!-- Brand centered: Hamro [logo] Vacation -->
-      <div class="flex items-center justify-center gap-3 py-4">
-        <span class="text-2xl md:text-3xl font-bold tracking-wide text-slate-900">Hamro</span>
-  
-        <!-- tip: if your file is not at the web root, use "photos/logo_hamro_vacation.png" (no leading slash) -->
-        <img
-          src="/photos/logo_hamro_vacation.png"
-          alt="Hamro Vacation logo"
-          class="h-19 w-14 rounded-full bg-slate-100 p-0.6 shadow-sm"
-          onerror="this.style.display='none'"
-        />
-  
-        <span class="text-2xl md:text-3xl font-bold tracking-wide text-brand-900">Vacation</span>
+<!-- Header / Nav -->
+<header id="siteHeader" class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex h-20 items-center justify-between gap-6">
+      <!-- Brand -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-600/10 ring-1 ring-brand-600/20 transition group-hover:bg-brand-600/15">
+          <img
+            src="photos/logo_hamro_vacation.png"
+            alt="Hamro Vacation logo"
+            class="h-8 w-8"
+            onerror="this.style.display='none'"
+          />
+        </span>
+        <div class="leading-none">
+          <span class="block text-lg font-semibold tracking-wide text-slate-900">Hamro Vacation</span>
+          <span class="block text-sm font-medium text-slate-500">Nepal Travel Specialists</span>
+        </div>
+      </a>
+
+      <!-- Desktop navigation -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a data-nav-link href="index.html" class="transition hover:text-brand-600">Home</a>
+        <a data-nav-link href="packages.html" class="transition hover:text-brand-600">Packages</a>
+        <a data-nav-link href="gallery.html" class="transition hover:text-brand-600">Gallery</a>
+        <a data-nav-link href="estimator.html" class="transition hover:text-brand-600">Estimator</a>
+        <a data-nav-link href="contact.html" class="transition hover:text-brand-600">Contact</a>
+        <a href="contact.html#booking" class="inline-flex items-center gap-2 rounded-full bg-brand-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700">
+          Plan Your Trip
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7l5 5m0 0-5 5m5-5H6"/>
+          </svg>
+        </a>
+      </nav>
+
+      <!-- CTA + mobile toggle -->
+      <div class="flex items-center gap-3">
+        <a href="tel:+18023106841" class="hidden sm:inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600 transition hover:border-brand-200 hover:text-brand-600">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 5.25 6 3l3 3-2.25 2.25a13.5 13.5 0 006 6L14.25 12 17.25 15l-2.25 3a2.25 2.25 0 01-3 0A21.75 21.75 0 013 7.5a2.25 2.25 0 012.25-2.25z"/>
+          </svg>
+          +1 (802) 310-6841
+        </a>
+        <button
+          id="menuBtn"
+          type="button"
+          class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-slate-600 shadow-sm transition hover:border-brand-200 hover:text-brand-600 lg:hidden"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
       </div>
-  
-      <!-- Centered nav -->
-      <nav class="flex flex-wrap items-center justify-center gap-4 md:gap-6 pb-3">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="packages.html" class="nav-link">Packages</a>
-        <a href="gallery.html" class="nav-link">Gallery</a>
-        <a href="estimator.html" class="nav-link">Estimator</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="contact.html#booking"
-           class="inline-flex items-center px-4 py-2 rounded-full bg-brand-600 text-white hover:bg-brand-700 shadow-sm">
-          Plan your trip
+    </div>
+
+    <!-- Mobile navigation -->
+    <div id="mobileMenu" class="hidden space-y-2 pb-6 lg:hidden">
+      <nav class="flex flex-col gap-1 rounded-2xl border border-slate-200 bg-white/80 p-4 text-sm font-semibold text-slate-600 shadow-sm backdrop-blur">
+        <a data-nav-link href="index.html" class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-600">Home</a>
+        <a data-nav-link href="packages.html" class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-600">Packages</a>
+        <a data-nav-link href="gallery.html" class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-600">Gallery</a>
+        <a data-nav-link href="estimator.html" class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-600">Estimator</a>
+        <a data-nav-link href="contact.html" class="rounded-xl px-3 py-2 transition hover:bg-brand-50 hover:text-brand-600">Contact</a>
+        <a href="contact.html#booking" class="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-3 py-2 text-white transition hover:bg-brand-700">
+          Plan Your Trip
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7l5 5m0 0-5 5m5-5H6"/>
+          </svg>
         </a>
       </nav>
     </div>
-  </header>
-  
-  <!-- Small helper styles for link underline/active state -->
-  <style>
-    .nav-link { position: relative; color: rgb(51 65 85); font-weight: 500; padding: .25rem .25rem; }
-    .nav-link:hover { color: rgb(29 78 216); }                 /* hover -> brand-700 */
-    .nav-link::after {
-      content: ""; position: absolute; left: 0; right: 0; bottom: -6px;
-      height: 2px; width: 0; margin: 0 auto; background: rgb(37 99 235);
-      transition: width .2s ease;
+  </div>
+</header>
+
+<script>
+  const headerEl = document.getElementById('siteHeader');
+  const toggleShadow = () => {
+    if (window.scrollY > 8) headerEl.classList.add('shadow-lg');
+    else headerEl.classList.remove('shadow-lg');
+  };
+  toggleShadow();
+  window.addEventListener('scroll', toggleShadow, { passive: true });
+
+  const path = location.pathname.split('/').pop() || 'index.html';
+  const navLinks = Array.from(document.querySelectorAll('[data-nav-link]'));
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href') || '';
+    if (href === path) {
+      link.setAttribute('aria-current', 'page');
+      link.classList.add('text-brand-600');
+      link.classList.add('lg:text-brand-600');
     }
-    .nav-link:hover::after { width: 100%; }
-    .nav-link[aria-current="page"] { color: rgb(29 78 216); }  /* active -> brand-700 */
-    .nav-link[aria-current="page"]::after { width: 100%; }
-  </style>
-  
-  <script>
-    // Add a soft shadow once the user scrolls a bit
-    const headerEl = document.getElementById('siteHeader');
-    const toggleShadow = () => {
-      if (window.scrollY > 4) headerEl.classList.add('shadow-md');
-      else headerEl.classList.remove('shadow-md');
-    };
-    toggleShadow();
-    window.addEventListener('scroll', toggleShadow);
-  
-    // Auto-highlight the current page link
-    const path = location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('nav .nav-link').forEach(a => {
-      const href = a.getAttribute('href') || '';
-      if (href === path) a.setAttribute('aria-current','page');
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (!mobileMenu?.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        const btn = document.getElementById('menuBtn');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      }
     });
-  </script>
+  });
+</script>
   
