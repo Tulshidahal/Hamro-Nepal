@@ -1,0 +1,105 @@
+html { scroll-behavior: smooth; }
+img { image-rendering: -webkit-optimize-contrast; }
+@media (max-width: 640px){ .shadow-sm{ box-shadow:0 1px 3px rgba(0,0,0,.05);} }
+/* =========================
+   Hamro Vacation — Packages
+   Works alongside Tailwind
+   ========================= */
+
+   :root{
+    --brand:#2563eb;
+    --brand-dark:#1d4ed8;
+    --ink:#0f172a;
+    --muted:#475569;
+    --line:#e2e8f0;
+    --bg:#f8fafc;
+  }
+  
+  /* Smooth fade/slide for sections */
+  #premium-20, #luxury-20 {
+    animation: sectionFade .35s ease both;
+  }
+  @keyframes sectionFade {
+    from { opacity:0; transform: translateY(6px); }
+    to { opacity:1; transform: translateY(0); }
+  }
+  
+  /* Table polish beyond Tailwind */
+  table.min-w-full {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  table.min-w-full thead th {
+    position: sticky;
+    top: 0;
+    background: #f1f5f9;
+    z-index: 1;
+  }
+  table.min-w-full tbody tr:hover {
+    background: #fafcff;
+  }
+  table.min-w-full tbody td,
+  table.min-w-full thead th,
+  table.min-w-full tfoot td {
+    border-bottom: 1px solid #eef2f7;
+  }
+  
+  /* Collapsible area mask when collapsed */
+  .itinerary-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem; /* matches Tailwind rounded-2xl */
+    border: 1px solid var(--line);
+    background: #fff;
+    box-shadow: 0 8px 28px rgba(2,6,23,.06);
+  }
+  
+  /* when collapsed, cap height (shows ~6 rows) */
+  .itinerary-wrap.collapsed {
+    max-height: 360px;
+  }
+  
+  /* Add a gentle gradient at the bottom when collapsed */
+  .itinerary-wrap.collapsed::after {
+    content:"";
+    position:absolute; left:0; right:0; bottom:0; height:64px;
+    background: linear-gradient(180deg, rgba(255,255,255,0), #fff 60%);
+    pointer-events: none;
+  }
+  
+  /* Reveal button */
+  .reveal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 600;
+    font-size: .95rem;
+    padding: .6rem 1rem;
+    border-radius: .75rem;
+    border: 1px solid var(--line);
+    color: #fff;
+    background: var(--brand);
+    transition: all .2s ease;
+    box-shadow: 0 6px 20px rgba(37,99,235,.18);
+  }
+  .reveal-btn:hover { background: var(--brand-dark); transform: translateY(-1px); }
+  .reveal-btn svg { width: 18px; height: 18px; }
+  
+  /* Secondary ghost button (used if needed) */
+  .btn-ghost {
+    color: var(--ink);
+    background: #fff;
+    border:1px solid var(--line);
+    box-shadow: 0 4px 14px rgba(2,6,23,.07);
+  }
+  .btn-ghost:hover { color: var(--brand-dark); }
+  
+  /* Stat tiles slight lift */
+  .rounded-xl.border.bg-white.p-4.shadow-sm {
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .rounded-xl.border.bg-white.p-4.shadow-sm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(2,6,23,.08);
+  }
+  

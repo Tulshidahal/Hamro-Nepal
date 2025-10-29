@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Contact & Booking — Hamro Vacation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{brand:{50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a'}}}}}</script>
+    <link rel="stylesheet" href="styles.css"/>
+    </head>
+    <body class="antialiased text-slate-800">
+      <div id="header-mount"></div>
+    
+      <main class="max-w-7xl mx-auto px-4 py-12">
+        <h1 class="text-3xl font-bold">Contact & Booking</h1>
+        <p class="text-slate-600 mt-1">Tell us your dates and preferences. We’ll send a tailored itinerary + final quote.</p>
+    
+        <section id="booking" class="grid md:grid-cols-2 gap-10 mt-8">
+          <form name="booking" class="bg-slate-50 border border-slate-200 rounded-2xl p-6 grid grid-cols-1 gap-4"
+            onsubmit="event.preventDefault(); alert('Thanks! We\\'ll be in touch within 24 hours.');">
+            <div><label class="block text-sm font-medium" for="name">Full Name</label><input id="name" name="name" required class="mt-1 w-full rounded-lg border-slate-300"/></div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div><label class="block text-sm font-medium" for="email">Email</label><input id="email" name="email" type="email" required class="mt-1 w-full rounded-lg border-slate-300"/></div>
+              <div><label class="block text-sm font-medium" for="phone">Phone / WhatsApp</label><input id="phone" name="phone" class="mt-1 w-full rounded-lg border-slate-300"/></div>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-4">
+              <div><label class="block text-sm font-medium" for="arrival">Arrival Date</label><input id="arrival" name="arrival" type="date" class="mt-1 w-full rounded-lg border-slate-300"/></div>
+              <div><label class="block text-sm font-medium" for="nights">Days</label><input id="nights" name="nights" type="number" min="5" max="60" value="20" class="mt-1 w-full rounded-lg border-slate-300"/></div>
+              <div><label class="block text-sm font-medium" for="party">Travelers</label><input id="party" name="party" type="number" min="1" max="12" value="4" class="mt-1 w-full rounded-lg border-slate-300"/></div>
+            </div>
+            <div><label class="block text-sm font-medium">Package Preference</label>
+              <select class="mt-1 w-full rounded-lg border-slate-300">
+                <option>Premium (5★)</option>
+                <option>Luxury (3–5★ mix)</option>
+                <option>Custom</option>
+              </select>
+            </div>
+            <div><label class="block text-sm font-medium" for="interests">Interests</label>
+              <select id="interests" name="interests" multiple class="mt-1 w-full rounded-lg border-slate-300">
+                <option>Cultural heritage</option><option>Wildlife & safari</option><option>Mountain views</option>
+                <option>Adventure sports</option><option>Wellness & spa</option><option>Food & markets</option>
+              </select>
+              <p class="text-xs text-slate-500 mt-1">Hold Ctrl/⌘ to select multiple.</p>
+            </div>
+            <div><label class="block text-sm font-medium" for="message">Notes</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about must-see places, room types, dietary needs, etc." class="mt-1 w-full rounded-lg border-slate-300"></textarea>
+            </div>
+            <div class="flex items-center gap-3">
+              <button class="px-5 py-2.5 rounded-lg bg-brand-600 text-white hover:bg-brand-700">Get My Itinerary</button>
+              <a href="https://wa.me/977XXXXXXXXXX" target="_blank" class="text-brand-700 hover:underline">Chat on WhatsApp</a>
+            </div>
+            <p class="text-xs text-slate-500">By submitting, you agree to our terms. We’ll never spam you.</p>
+          </form>
+    
+          <aside class="md:pt-4">
+            <div class="rounded-2xl border border-slate-200 p-6 bg-white shadow-sm">
+              <h3 class="font-semibold text-lg">Why travel with us?</h3>
+              <ul class="mt-3 space-y-2 text-sm">
+                <li>✔️ Registered LLP, insured operations</li>
+                <li>✔️ Commissioned hotel partners for better rates</li>
+                <li>✔️ Dedicated vehicle + driver for your group</li>
+                <li>✔️ Bilingual guides focused on safety & culture</li>
+              </ul>
+              <hr class="my-4"/>
+              <h4 class="font-semibold">Seasonal Offers</h4>
+              <p class="text-sm text-slate-600">Festival specials (Dashain, Tihar), monsoon & winter discounts. Ask for current promos.</p>
+            </div>
+          </aside>
+        </section>
+      </main>
+    
+      <div id="footer-mount"></div>
+      <script src="app.js"></script>
+    </body>
+    </html> 
