@@ -190,33 +190,36 @@
               </div>
               <h2 class="mt-4 text-2xl font-semibold text-white">Plan Your Trip</h2>
               <p class="mt-3 text-base text-slate-100">Share a few details and we’ll reply with a tailored outline and transparent pricing options.</p>
-              <form class="mt-6 space-y-4 text-left" action="mailto:hamrovacation@gmail.com?subject=Hamro%20Vacation%20Plan%20Request" method="POST" enctype="text/plain">
+              <form class="mt-6 space-y-4 text-left" action="https://formsubmit.co/hamrovacation@gmail.com" method="POST">
                 <div>
                   <label class="block text-sm font-semibold text-white" for="plan-name">Name</label>
-                  <input id="plan-name" name="Name" type="text" required placeholder="Full name" autocomplete="name" class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-base text-white placeholder-white/70 transition focus:border-white focus:bg-white/20 focus:outline-none focus:ring-2 focus:ring-brand-200/70"/>
+                  <input id="plan-name" name="name" type="text" required placeholder="Full name" autocomplete="name" class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-base text-white placeholder-white/70 transition focus:border-white focus:bg-white/20 focus:outline-none focus:ring-2 focus:ring-brand-200/70"/>
                 </div>
                 <div>
                   <label class="block text-sm font-semibold text-white" for="plan-email">Email</label>
-                  <input id="plan-email" name="Email" type="email" required placeholder="you@example.com" autocomplete="email" class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-base text-white placeholder-white/70 transition focus:border-white focus:bg-white/20 focus:outline-none focus:ring-2 focus:ring-brand-200/70"/>
+                  <input id="plan-email" name="email" type="email" required placeholder="you@example.com" autocomplete="email" class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-base text-white placeholder-white/70 transition focus:border-white focus:bg-white/20 focus:outline-none focus:ring-2 focus:ring-brand-200/70"/>
                 </div>
                 <div class="grid gap-4 sm:grid-cols-2">
                   <div>
                     <label class="block text-sm font-semibold text-white" for="plan-start">Arrival</label>
-                    <input id="plan-start" name="Arrival Date" type="date" required class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-base text-white placeholder-white/70 transition focus:border-white focus:bg-white/20 focus:outline-none focus:ring-2 focus:ring-brand-200/70"/>
+                    <input id="plan-start" name="arrival_date" type="date" required class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-base text-white placeholder-white/70 transition focus:border-white focus:bg-white/20 focus:outline-none focus:ring-2 focus:ring-brand-200/70"/>
                   </div>
                   <div>
                     <label class="block text-sm font-semibold text-white" for="plan-end">Departure</label>
-                    <input id="plan-end" name="Departure Date" type="date" required class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-base text-white placeholder-white/70 transition focus:border-white focus:bg-white/20 focus:outline-none focus:ring-2 focus:ring-brand-200/70"/>
+                    <input id="plan-end" name="departure_date" type="date" required class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-base text-white placeholder-white/70 transition focus:border-white focus:bg-white/20 focus:outline-none focus:ring-2 focus:ring-brand-200/70"/>
                   </div>
                 </div>
                 <div>
                   <label class="block text-sm font-semibold text-white" for="plan-group">Group size</label>
-                  <input id="plan-group" name="Group Size" type="number" min="1" max="20" required placeholder="e.g. 4 travelers" class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-base text-white placeholder-white/70 transition focus:border-white focus:bg-white/20 focus:outline-none focus:ring-2 focus:ring-brand-200/70"/>
+                  <input id="plan-group" name="group_size" type="number" min="1" max="20" required placeholder="e.g. 4 travelers" class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-base text-white placeholder-white/70 transition focus:border-white focus:bg-white/20 focus:outline-none focus:ring-2 focus:ring-brand-200/70"/>
                 </div>
                 <div>
                   <label class="block text-sm font-semibold text-white" for="plan-message">Trip notes</label>
-                  <textarea id="plan-message" name="Trip Notes" rows="3" placeholder="Must-see regions, hotel style, occasion..." class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-base text-white placeholder-white/70 transition focus:border-white focus:bg-white/20 focus:outline-none focus:ring-2 focus:ring-brand-200/70"></textarea>
+                  <textarea id="plan-message" name="trip_notes" rows="3" placeholder="Must-see regions, hotel style, occasion..." class="mt-1 w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-base text-white placeholder-white/70 transition focus:border-white focus:bg-white/20 focus:outline-none focus:ring-2 focus:ring-brand-200/70"></textarea>
                 </div>
+                <input type="hidden" name="_subject" value="Hamro Vacation Hero Form"/>
+                <input type="hidden" name="_next" value="https://tulshidahal.github.io/Hamro-Nepal/thank-you.html"/>
+                <input type="hidden" name="_captcha" value="false"/>
                 <button type="submit" class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-base font-semibold text-slate-900 shadow-lg transition hover:bg-brand-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                   Send Trip Request
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
