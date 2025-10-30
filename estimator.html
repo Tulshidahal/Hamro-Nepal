@@ -34,10 +34,10 @@
     
       <section class="max-w-7xl mx-auto px-4 py-12 md:flex md:items-start md:gap-10">
         <div class="md:w-1/2">
-          <h1 class="text-3xl font-bold">Trip Cost Estimator</h1>
-          <p class="text-slate-600 mt-1">Get an instant rough estimate.</p>
+          <h1 class="text-4xl font-semibold sm:text-5xl">Trip Cost Estimator</h1>
+          <p class="mt-2 text-lg text-slate-600">Get a quick budget snapshot, then fine-tune it with our team.</p>
     
-          <form id="estimator" class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-50 border border-slate-200 rounded-2xl p-5">
+          <form id="estimator" class="mt-6 grid grid-cols-1 gap-4 rounded-2xl border border-slate-200 bg-white p-5 sm:grid-cols-2">
             <div><label class="block text-sm font-medium">Package</label>
               <select id="pkg" class="mt-1 w-full rounded-lg border-slate-300" aria-label="Package">
                 <option value="premium" data-hotel="120" data-vehicle="100" data-guide="30">Premium (5★ avg)</option>
@@ -45,9 +45,9 @@
                 <option value="custom" data-hotel="90" data-vehicle="100" data-guide="30">Custom (set avg)</option>
               </select>
             </div>
-            <div><label class="block text-sm font-medium">Days</label><input id="days" type="number" min="5" max="60" value="20" class="mt-1 w-full rounded-lg border-slate-300"/></div>
-            <div><label class="block text-sm font-medium">Travelers</label><input id="people" type="number" min="1" max="12" value="4" class="mt-1 w-full rounded-lg border-slate-300"/></div>
-            <div><label class="block text-sm font-medium">Include Airfare (per person)</label><input id="airfare" type="number" min="0" step="50" value="1500" class="mt-1 w-full rounded-lg border-slate-300"/></div>
+            <div><label class="block text-sm font-medium">Days</label><input id="days" type="number" min="5" max="60" placeholder="e.g. 20" class="mt-1 w-full rounded-lg border-slate-300"/></div>
+            <div><label class="block text-sm font-medium">Travelers</label><input id="people" type="number" min="1" max="12" placeholder="e.g. 4" class="mt-1 w-full rounded-lg border-slate-300"/></div>
+            <div><label class="block text-sm font-medium">Include Airfare (per person)</label><input id="airfare" type="number" min="0" step="50" placeholder="Optional" class="mt-1 w-full rounded-lg border-slate-300"/></div>
     
             <fieldset class="sm:col-span-2">
               <legend class="text-sm font-medium">Activities (per person)</legend>
@@ -60,8 +60,8 @@
             </fieldset>
     
             <div class="sm:col-span-2 flex items-center gap-3">
-              <button type="button" id="calcBtn" class="px-4 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-700">Calculate</button>
-              <span class="text-xs text-slate-500">Assumptions: 1 room per 2 guests. Adjust in final quote.</span>
+              <button type="button" id="calcBtn" class="rounded-lg bg-brand-600 px-4 py-2 text-base font-semibold text-white transition hover:bg-brand-700">Calculate</button>
+              <span class="text-sm text-slate-500">Assumes 1 room per 2 guests. Adjust specifics during your consult.</span>
             </div>
           </form>
         </div>
@@ -69,7 +69,7 @@
         <div class="md:w-1/2 mt-8 md:mt-0">
           <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <h3 class="text-lg font-semibold">Estimate</h3>
-            <div id="result" class="mt-4 text-sm text-slate-700 space-y-2"><p>Use the form to get an instant estimate.</p></div>
+            <div id="result" class="mt-4 space-y-2 text-base text-slate-700"><p>Use the form to get an instant estimate.</p></div>
             <div class="mt-6"><a href="contact.html#booking" class="px-4 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800">Request a Detailed Quote</a></div>
           </div>
         </div>

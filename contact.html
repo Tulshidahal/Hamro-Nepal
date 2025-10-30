@@ -33,11 +33,11 @@
       <div id="header-mount"></div>
     
       <main class="max-w-7xl mx-auto px-4 py-12">
-        <h1 class="text-3xl font-bold">Contact & Booking</h1>
-        <p class="text-slate-600 mt-1">Tell us your dates and preferences. We’ll send a tailored itinerary + final quote.</p>
+        <h1 class="text-4xl font-semibold sm:text-5xl">Contact &amp; Booking</h1>
+        <p class="mt-3 text-lg text-slate-600">Tell us your dates and preferences. We’ll send a tailored itinerary plus a transparent quote.</p>
     
         <section id="booking" class="grid md:grid-cols-2 gap-10 mt-8">
-          <form name="booking" class="bg-slate-50 border border-slate-200 rounded-2xl p-6 grid grid-cols-1 gap-4"
+          <form name="booking" class="grid grid-cols-1 gap-4 rounded-2xl border border-slate-200 bg-white p-6"
             onsubmit="event.preventDefault(); alert('Thanks! We\\'ll be in touch within 24 hours.');">
             <div><label class="block text-sm font-medium" for="name">Full Name</label><input id="name" name="name" required class="mt-1 w-full rounded-lg border-slate-300"/></div>
             <div class="grid sm:grid-cols-2 gap-4">
@@ -46,8 +46,8 @@
             </div>
             <div class="grid sm:grid-cols-3 gap-4">
               <div><label class="block text-sm font-medium" for="arrival">Arrival Date</label><input id="arrival" name="arrival" type="date" class="mt-1 w-full rounded-lg border-slate-300"/></div>
-              <div><label class="block text-sm font-medium" for="nights">Days</label><input id="nights" name="nights" type="number" min="5" max="60" value="20" class="mt-1 w-full rounded-lg border-slate-300"/></div>
-              <div><label class="block text-sm font-medium" for="party">Travelers</label><input id="party" name="party" type="number" min="1" max="12" value="4" class="mt-1 w-full rounded-lg border-slate-300"/></div>
+              <div><label class="block text-sm font-medium" for="nights">Days</label><input id="nights" name="nights" type="number" min="5" max="60" placeholder="e.g. 20" class="mt-1 w-full rounded-lg border-slate-300"/></div>
+              <div><label class="block text-sm font-medium" for="party">Travelers</label><input id="party" name="party" type="number" min="1" max="12" placeholder="e.g. 4" class="mt-1 w-full rounded-lg border-slate-300"/></div>
             </div>
             <div><label class="block text-sm font-medium">Package Preference</label>
               <select class="mt-1 w-full rounded-lg border-slate-300">
@@ -61,13 +61,13 @@
                 <option>Cultural heritage</option><option>Wildlife & safari</option><option>Mountain views</option>
                 <option>Adventure sports</option><option>Wellness & spa</option><option>Food & markets</option>
               </select>
-              <p class="text-xs text-slate-500 mt-1">Hold Ctrl/⌘ to select multiple.</p>
+              <p class="mt-1 text-sm text-slate-500">Hold Ctrl/⌘ to select multiple.</p>
             </div>
             <div><label class="block text-sm font-medium" for="message">Notes</label>
               <textarea id="message" name="message" rows="4" placeholder="Tell us about must-see places, room types, dietary needs, etc." class="mt-1 w-full rounded-lg border-slate-300"></textarea>
             </div>
             <div class="flex items-center gap-3">
-              <button class="px-5 py-2.5 rounded-lg bg-brand-600 text-white transition hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300">Get My Itinerary</button>
+              <button class="rounded-lg bg-brand-600 px-5 py-2.5 text-base font-semibold text-white transition hover:bg-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300">Get My Itinerary</button>
               <a href="https://wa.me/18023106841" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-brand-700 transition hover:text-brand-600 hover:underline">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 .5A11.5 11.5 0 0 0 2.1 18.42L.5 23.5l5.26-1.55A11.5 11.5 0 1 0 12 .5Zm0 2a9.5 9.5 0 0 1 8.17 14.5l-.28.46a1 1 0 0 0-.12.24l-.72 1.76-1.87-.59a1 1 0 0 0-.76.06 9.5 9.5 0 1 1-4.3-17.43ZM8.54 6.98a.74.74 0 0 0-.55.26 4.38 4.38 0 0 0-1.1 3c0 2.11 1.6 4.14 4.57 5.94 2.89 1.74 4.6 1.96 5.68 1.73a3.33 3.33 0 0 0 1.26-.68 1 1 0 0 0 .33-.74c0-.41 0-1.27-.59-1.48s-1.43-.7-1.62-.77-.38-.12-.54.17-.62.77-.76.93-.28.22-.52.08a7.73 7.73 0 0 1-2.27-1.4 8.58 8.58 0 0 1-1.61-2.01c-.17-.29 0-.45.13-.58.13-.13.29-.33.43-.5a1.94 1.94 0 0 0 .28-.5 1.64 1.64 0 0 0-.08-.58c-.08-.17-.62-1.54-.86-2.09s-.39-.52-.54-.53Z"/>
@@ -75,7 +75,7 @@
                 Chat on WhatsApp
               </a>
             </div>
-            <p class="text-xs text-slate-500">By submitting, you agree to our terms. We’ll never spam you.</p>
+            <p class="text-sm text-slate-500">By submitting, you agree to our terms. We’ll never spam you.</p>
           </form>
     
           <aside class="md:pt-4">

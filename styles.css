@@ -3,6 +3,8 @@ body {
   font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background-color: var(--bg);
   color: var(--ink);
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 img {
   display: block;
@@ -74,11 +76,12 @@ table.min-w-full tfoot td {
   border: 1px solid var(--line);
   background: #fff;
   box-shadow: 0 8px 28px rgba(2,6,23,.06);
+  transition: max-height .3s ease;
 }
 
 /* when collapsed, cap height (shows ~6 rows) */
 .itinerary-wrap.collapsed {
-  max-height: 360px;
+  max-height: var(--collapse-height, 320px);
 }
 
 /* Add a gentle gradient at the bottom when collapsed */
@@ -95,7 +98,7 @@ table.min-w-full tfoot td {
   align-items: center;
   gap: .5rem;
   font-weight: 600;
-  font-size: .95rem;
+  font-size: 1rem;
   padding: .6rem 1rem;
   border-radius: .75rem;
   border: 1px solid var(--line);

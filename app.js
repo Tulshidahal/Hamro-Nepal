@@ -128,6 +128,7 @@ async function injectPartials() {
     const panel = document.querySelector('[data-testimonial-panel]');
     if (!panel) return; // Not on homepage
 
+    // Grab the testimonial content elements and navigation controls.
     const quoteEl = panel.querySelector('[data-testimonial-quote]');
     const authorEl = panel.querySelector('[data-testimonial-author]');
     const metaEl = panel.querySelector('[data-testimonial-meta]');
@@ -136,28 +137,30 @@ async function injectPartials() {
     const nextBtn = document.querySelector('[data-testimonial-next]');
     if (!quoteEl || !authorEl || !metaEl || !dots.length || !prevBtn || !nextBtn) return;
 
+    // Collection of short testimonials to cycle through.
     const slides = [
       {
-        quote: '"Hamro handled every transfer, guide, and reservation. Our boys loved the Everest flight and we never felt rushed."',
+        quote: '"We felt cared for the entire time—every transfer, guide, and detail just happened."',
         author: '- The Jensen family, Vermont',
         meta: 'Family Journey · 24-Day Premium Plan'
       },
       {
-        quote: '"Private yoga, Ayurvedic meals, and spa days were woven between cultural outings. The pacing was perfect for altitude."',
+        quote: '"Wellness days, culture, and adventure were paced perfectly. We came home rested and inspired."',
         author: '- Priya & Jordan, California',
         meta: 'Wellness Escape · 20-Day Luxury Plan'
       },
       {
-        quote: '"From helicopter champagne to calligraphed itineraries, every surprise was thoughtful. We cannot wait to return."',
+        quote: '"The surprises were so thoughtful—calligraphed itineraries, helicopter champagne, the works."',
         author: '- Camille & Aaron, Toronto',
         meta: 'Anniversary Journey · Custom 18-Day Itinerary'
       }
     ];
 
-    let index = 0;
-    let timerId;
+    let index = 0; // Current testimonial index
+    let timerId;   // Interval ID for autoplay
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    // Toggle visual + ARIA state on pagination dots.
     const setActiveDot = (activeIndex) => {
       dots.forEach((dot, dotIndex) => {
         dot.dataset.active = String(dotIndex === activeIndex);
@@ -165,6 +168,7 @@ async function injectPartials() {
       });
     };
 
+    // Render the actual testimonial copy and metadata.
     const render = (activeIndex) => {
       const slide = slides[activeIndex];
       quoteEl.textContent = slide.quote;
@@ -173,11 +177,13 @@ async function injectPartials() {
       setActiveDot(activeIndex);
     };
 
+    // Move to a specific slide index (with wrapping).
     const goTo = (nextIndex) => {
       index = (nextIndex + slides.length) % slides.length;
       render(index);
     };
 
+    // Kick off the autoplay loop unless the user prefers reduced motion.
     const startAutoPlay = () => {
       if (prefersReducedMotion) return;
       stopAutoPlay();
@@ -186,6 +192,7 @@ async function injectPartials() {
       }, 8000);
     };
 
+    // Stop the autoplay loop.
     const stopAutoPlay = () => {
       if (timerId) {
         window.clearInterval(timerId);
@@ -193,6 +200,7 @@ async function injectPartials() {
       }
     };
 
+    // Manual navigation controls.
     prevBtn.addEventListener('click', () => {
       goTo(index - 1);
       startAutoPlay();
@@ -203,6 +211,7 @@ async function injectPartials() {
       startAutoPlay();
     });
 
+    // Allow users to use the pagination dots as navigation.
     dots.forEach((dot, dotIndex) => {
       dot.addEventListener('click', () => {
         goTo(dotIndex);
@@ -220,6 +229,7 @@ async function injectPartials() {
     render(index);
     startAutoPlay();
 
+    // Pause autoplay on hover for easier reading.
     panel.addEventListener('mouseenter', stopAutoPlay);
     panel.addEventListener('mouseleave', startAutoPlay);
   }
@@ -229,6 +239,7 @@ async function injectPartials() {
   // ===============================
   function setupFloatingWhatsApp() {
     if (document.querySelector('[data-whatsapp-button]')) return;
+    // Build a floating anchor that opens WhatsApp in a new tab.
     const btn = document.createElement('a');
     btn.href = 'https://wa.me/18023106841';
     btn.target = '_blank';
@@ -259,7 +270,7 @@ async function injectPartials() {
    * @param {string} labelHide - text when expanded
    * @returns {HTMLButtonElement}
    */
-  function makeToggleButton(labelShow = 'Show full itinerary', labelHide = 'Hide details') {
+  function makeToggleButton(labelShow = 'See full itinerary', labelHide = 'Hide itinerary') {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'reveal-btn mt-4';
@@ -284,24 +295,40 @@ async function injectPartials() {
   
     // Find the first "responsive table" container and the table inside it
     const container = section.querySelector('.overflow-x-auto.rounded-2xl.border.bg-white.shadow-sm');
+    // The tables are inside overflow containers; we wrap them to control height.
     const table = container?.querySelector('table');
     if (!container || !table) return; // No table found, skip
   
     // Create a wrapper around the table container to control collapsed height/gradient
     const wrapper = document.createElement('div');
+    // Collapsed by default so visitors only see a preview of the itinerary.
     wrapper.className = 'itinerary-wrap collapsed'; // Start in collapsed state
   
     // Insert the wrapper before the existing container, then move the container inside it
     container.parentNode.insertBefore(wrapper, container);
     wrapper.appendChild(container);
   
+    // Measure first rows so the collapsed state does not clip halfway through a row
+    // Defer measurement so the browser has time to lay out the table first.
+    requestAnimationFrame(() => {
+      const previewRows = 6;
+      let measured = table.tHead ? table.tHead.offsetHeight : 0;
+      const rows = table.tBodies?.length ? Array.from(table.tBodies[0].rows) : Array.from(table.querySelectorAll('tbody tr'));
+      rows.slice(0, previewRows).forEach(row => {
+        measured += row.offsetHeight;
+      });
+      wrapper.style.setProperty('--collapse-height', `${Math.ceil(measured + 16)}px`);
+    });
+
     // Add the toggle button right after the wrapper
+    // Insert the toggle button after the wrapper so we can expand/collapse.
     const btn = makeToggleButton();
     wrapper.after(btn);
   
     // Toggle behavior for expanding/collapsing the itinerary
     btn.addEventListener('click', () => {
       // Toggle "collapsed" class to expand/collapse the wrapper
+      // Flip the collapsed state and update the visuals.
       wrapper.classList.toggle('collapsed');
   
       // Update button label + icon based on current state
