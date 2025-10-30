@@ -115,7 +115,135 @@ async function injectPartials() {
   }
   
   // Run partial injection first, then set up the estimator (in case we are on that page)
-  injectPartials().then(setupEstimator);
+  injectPartials().then(() => {
+    setupEstimator();
+    setupTestimonialsSlider();
+    setupFloatingWhatsApp();
+  });
+
+  // ===============================
+  // Homepage: testimonials carousel
+  // ===============================
+  function setupTestimonialsSlider() {
+    const panel = document.querySelector('[data-testimonial-panel]');
+    if (!panel) return; // Not on homepage
+
+    const quoteEl = panel.querySelector('[data-testimonial-quote]');
+    const authorEl = panel.querySelector('[data-testimonial-author]');
+    const metaEl = panel.querySelector('[data-testimonial-meta]');
+    const dots = Array.from(document.querySelectorAll('[data-testimonial-dot]'));
+    const prevBtn = document.querySelector('[data-testimonial-prev]');
+    const nextBtn = document.querySelector('[data-testimonial-next]');
+    if (!quoteEl || !authorEl || !metaEl || !dots.length || !prevBtn || !nextBtn) return;
+
+    const slides = [
+      {
+        quote: '"Hamro handled every transfer, guide, and reservation. Our boys loved the Everest flight and we never felt rushed."',
+        author: '- The Jensen family, Vermont',
+        meta: 'Family Journey · 24-Day Premium Plan'
+      },
+      {
+        quote: '"Private yoga, Ayurvedic meals, and spa days were woven between cultural outings. The pacing was perfect for altitude."',
+        author: '- Priya & Jordan, California',
+        meta: 'Wellness Escape · 20-Day Luxury Plan'
+      },
+      {
+        quote: '"From helicopter champagne to calligraphed itineraries, every surprise was thoughtful. We cannot wait to return."',
+        author: '- Camille & Aaron, Toronto',
+        meta: 'Anniversary Journey · Custom 18-Day Itinerary'
+      }
+    ];
+
+    let index = 0;
+    let timerId;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const setActiveDot = (activeIndex) => {
+      dots.forEach((dot, dotIndex) => {
+        dot.dataset.active = String(dotIndex === activeIndex);
+        dot.setAttribute('aria-pressed', dotIndex === activeIndex ? 'true' : 'false');
+      });
+    };
+
+    const render = (activeIndex) => {
+      const slide = slides[activeIndex];
+      quoteEl.textContent = slide.quote;
+      authorEl.textContent = slide.author;
+      metaEl.textContent = slide.meta;
+      setActiveDot(activeIndex);
+    };
+
+    const goTo = (nextIndex) => {
+      index = (nextIndex + slides.length) % slides.length;
+      render(index);
+    };
+
+    const startAutoPlay = () => {
+      if (prefersReducedMotion) return;
+      stopAutoPlay();
+      timerId = window.setInterval(() => {
+        goTo(index + 1);
+      }, 8000);
+    };
+
+    const stopAutoPlay = () => {
+      if (timerId) {
+        window.clearInterval(timerId);
+        timerId = undefined;
+      }
+    };
+
+    prevBtn.addEventListener('click', () => {
+      goTo(index - 1);
+      startAutoPlay();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      goTo(index + 1);
+      startAutoPlay();
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      dot.addEventListener('click', () => {
+        goTo(dotIndex);
+        startAutoPlay();
+      });
+      dot.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          goTo(dotIndex);
+          startAutoPlay();
+        }
+      });
+    });
+
+    render(index);
+    startAutoPlay();
+
+    panel.addEventListener('mouseenter', stopAutoPlay);
+    panel.addEventListener('mouseleave', startAutoPlay);
+  }
+
+  // ===============================
+  // Floating WhatsApp chat button
+  // ===============================
+  function setupFloatingWhatsApp() {
+    if (document.querySelector('[data-whatsapp-button]')) return;
+    const btn = document.createElement('a');
+    btn.href = 'https://wa.me/18023106841';
+    btn.target = '_blank';
+    btn.rel = 'noopener';
+    btn.className = 'fixed bottom-5 right-4 z-50 inline-flex items-center gap-2 rounded-full bg-emerald-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-emerald-900/30 transition hover:-translate-y-0.5 hover:bg-emerald-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-200 sm:bottom-6 sm:right-6';
+    btn.setAttribute('aria-label', 'Chat on WhatsApp');
+    btn.dataset.whatsappButton = 'true';
+    btn.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 .5A11.5 11.5 0 0 0 2.1 18.42L.5 23.5l5.26-1.55A11.5 11.5 0 1 0 12 .5Zm0 2a9.5 9.5 0 0 1 8.17 14.5l-.28.46a1 1 0 0 0-.12.24l-.72 1.76-1.87-.59a1 1 0 0 0-.76.06 9.5 9.5 0 1 1-4.3-17.43ZM8.54 6.98a.74.74 0 0 0-.55.26 4.38 4.38 0 0 0-1.1 3c0 2.11 1.6 4.14 4.57 5.94 2.89 1.74 4.6 1.96 5.68 1.73a3.33 3.33 0 0 0 1.26-.68 1 1 0 0 0 .33-.74c0-.41 0-1.27-.59-1.48s-1.43-.7-1.62-.77-.38-.12-.54.17-.62.77-.76.93-.28.22-.52.08a7.73 7.73 0 0 1-2.27-1.4 8.58 8.58 0 0 1-1.61-2.01c-.17-.29 0-.45.13-.58.13-.13.29-.33.43-.5a1.94 1.94 0 0 0 .28-.5 1.64 1.64 0 0 0-.08-.58c-.08-.17-.62-1.54-.86-2.09s-.39-.52-.54-.53Z"/>
+      </svg>
+      WhatsApp
+    `;
+    document.body.appendChild(btn);
+  }
   
   
   // ===================================================

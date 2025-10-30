@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tulshidahal.github.io/Hamro-Nepal/sitemap.xml
